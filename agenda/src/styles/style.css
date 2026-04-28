@@ -20,6 +20,26 @@ body {
 }
 
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+
+body {
+    background-color: #FAFAFA; /* Fundo levemente cinza/gelo para destacar a logo branca */
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
 /* --- MENU NO TOPO --- */
 header {
     display: flex;
@@ -368,4 +388,14 @@ input:focus, select:focus {
     .day {
         min-height: auto;
     }
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.voltar {
+  display: block;
+  margin-top: 20px;
 }
