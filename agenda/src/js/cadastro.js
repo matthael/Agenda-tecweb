@@ -1,15 +1,25 @@
-document.getElementById("formCadastro").addEventListener("submit", function(e) {
-  e.preventDefault();
+import { salvarAgendamento } from "../data/db.js";
 
-  const agendamento = {
-    nome: document.getElementById("nome").value,
-    data: document.getElementById("data").value,
-    hora: document.getElementById("hora").value,
-    descricao: document.getElementById("descricao").value
-  };
+const form = document.getElementById("form-agendamento");
 
-  salvarAgendamento(agendamento);
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  alert("Agendamento salvo!");
-  window.location.href = "listagem.html";
+    const agendamento = {
+        nome: document.getElementById("nome").value,
+        cpf: document.getElementById("cpf").value,
+        telefone: document.getElementById("telefone").value,
+        email: document.getElementById("email").value,
+        data: document.getElementById("data").value,
+        horario: document.getElementById("horario").value
+    };
+
+    salvarAgendamento(agendamento);
+
+    alert("Agendamento realizado com sucesso!");
+
+    form.reset();
+
+    // redireciona
+    window.location.href = "./listagem.html";
 });

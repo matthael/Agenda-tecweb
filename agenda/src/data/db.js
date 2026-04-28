@@ -1,9 +1,11 @@
-function salvarAgendamento(agendamento) {
-  let lista = JSON.parse(localStorage.getItem("agenda")) || [];
-  lista.push(agendamento);
-  localStorage.setItem("agenda", JSON.stringify(lista));
+const KEY = "agendamentos_reserva_ai";
+
+export function salvarAgendamento(novo) {
+    const lista = JSON.parse(localStorage.getItem(KEY)) || [];
+    lista.push(novo);
+    localStorage.setItem(KEY, JSON.stringify(lista));
 }
 
-function obterAgendamentos() {
-  return JSON.parse(localStorage.getItem("agenda")) || [];
+export function obterAgendamentos() {
+    return JSON.parse(localStorage.getItem(KEY)) || [];
 }
