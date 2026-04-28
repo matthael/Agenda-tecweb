@@ -1,9 +1,15 @@
-export function setupCounter(element) {
-  let counter = 0
-  const setCounter = (count) => {
-    counter = count
-    element.innerHTML = `Count is ${counter}`
-  }
-  element.addEventListener('click', () => setCounter(counter + 1))
-  setCounter(0)
-}
+const lista = document.getElementById("lista");
+const agendamentos = obterAgendamentos();
+
+agendamentos.forEach(item => {
+  const row = `
+    <tr>
+      <td>${item.nome}</td>
+      <td>${item.data}</td>
+      <td>${item.hora}</td>
+      <td>${item.descricao}</td>
+    </tr>
+  `;
+
+  lista.innerHTML += row;
+});
